@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>treino</title>
+
+        <!--Estilo do Site-->
+        <style>
+            h1, div, ul, li, p{
+                padding: 0;
+                text-decoration: 0;
+                margin: 0;
+                border: 0;
+            }
+            body{
+                font: normal 12pt arial;
+                padding: 20px;
+            }
+            h1{
+                text-transform: uppercase;
+                color: orangered;
+            }
+            .resultado {
+                font-family: Arial, Helvetica, sans-serif;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                color: red;
+                font: normal 15pt arial;
+            }
+            .abas_numeros input{
+                width: 150px;
+                height: 30px;
+            }
+            .operadores{
+                margin-top: 18px;
+            }
+                   
+            .operadores input{
+                width: 77px;
+                height: 25px;
+                padding: 0;
+                text-align: center;
+            }
+
+            .operadores ul li{
+                display:inline-block;
+            }
+            
+         
+        </style>
+    </head>
+
+    <body>
+        <h1>
+            Calculadora
+        </h1>
+        <div class="resultado">
+            <p>
+                ....
+            </p>
+        </div>
+
+        <div class="abas_numeros">
+            <input type="text" name="txtn1" id="txtn1">
+            <input type="text" name="txtn2" id="txtn2">
+        </div>
+
+        <div class="operadores">
+           <ul>
+               <li>
+                   <input type="button" value="+" onclick="somar()">
+               </li>
+               <li>
+                  <input type="button" value="-" onclick="subtrair()">
+                </li>
+                <li>
+                    <input type="button" value="x" onclick="multiplicar()">
+                </li>
+                <li>
+                    <input type="button" value="/" onclick="dividir()">
+                </li>
+           </ul>
+        </div>
+
+        <!--JavaScript-->
+        <script>
+            
+            function somar(){
+                var tn1 = document.getElementById('txtn1')
+                var tn2 = document.getElementById('txtn2')
+                var resultado = document.getElementsByClassName('resultado')[0]
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+                var s = n1 + n2
+                resultado.innerText = (`O resultado da adição de ${n1} e ${n2} é igual a ${s}`)
+            }
+
+            function subtrair(){
+                var tn1 = document.getElementById('txtn1')
+                var tn2 = document.getElementById('txtn2')
+                var resultado = document.getElementsByClassName('resultado')[0]
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+                var s = n1 - n2
+                resultado.innerText = (`O resultado da subtração de ${n1} e ${n2} é igual a ${s}`)
+            }
+
+            function dividir(){
+                var tn1 = document.getElementById('txtn1')
+                var tn2 = document.getElementById('txtn2')
+                var resultado = document.getElementsByClassName('resultado')[0]
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+                var s = n1 / n2
+                resultado.innerText = (`O resultado da multiplicação de ${n1} e ${n2} é igual a ${s}`)
+            }
+
+            function multiplicar(){
+                var tn1 = document.getElementById('txtn1')
+                var tn2 = document.getElementById('txtn2')
+                var resultado = document.getElementsByClassName('resultado')[0]
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+                var s = n1 * n2
+                resultado.innerText = (`O resultado da multiplicação de ${n1} e ${n2} é igual a ${s}`)
+            }
+
+        </script>
+    </body>
+</html>
